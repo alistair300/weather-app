@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Weather</title>
+  </head>
+  <body class="clouds">
+    <section class="weather-background" id="background">
+      <div class="container">
+        <!-- date -->
+        <div class="date">
+          <div class="clock">
+            <span class="time style-color" id="time">07:00</span>
+            <span class="meridiem style-color" id="meridiem">am</span>
+          </div>
+          <!-- clock -->
+          <div class="day style-color" id="day">Monday, December 30, 2021</div>
+        </div>
+
+        <!-- weather -->
+        <div class="weather">
+          <!-- temp -->
+          <div class="weather-temp">
+            <span class="temp style-color" id="temp">92</span>
+            <button class="toggler" id="toggler">
+              <span class="celsius active" id="celsius" data-unit="metric">
+                &deg;C
+              </span>
+              <span class="line"></span>
+              <span class="fahrenheit" id="fahrenheit" data-unit="imperial">
+                &deg;F
+              </span>
+            </button>
+          </div>
+
+          <!-- location -->
+          <div class="weather-location tooltip">
+            <div class="city style-color" id="city" contenteditable="true">
+              New York
+            </div>
+            <div class="country style-color" id="country">United States</div>
+
+            <!-- tooltip -->
+            <div class="tooltip-text" id="tooltip">
+              <div>Click here to search for a city</div>
+              <div class="close" id="close">x</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- weather-forecast -->
+    <section class="weather-forecast">
+      <div class="container">
+        <!-- desc -->
+        <div class="weather-stats">
+          <img
+            src="http://openweathermap.org/img/wn/10d@4x.png"
+            alt=""
+            class="icon set-color"
+            id="icon"
+          />
+          <div class="desc set-color" id="desc">clear sky</div>
+        </div>
+
+        <!-- feels like -->
+        <div class="weather-feels">
+          <span class="set-color">Feels Like:</span>
+          <span class="feels-like set-color" id="feels-like"> 92 </span>
+        </div>
+
+        <!-- high low -->
+        <div class="weather-highlow">
+          <div class="temp-high set-color">
+            <i class="fas fa-temperature-high fa-2x"></i>
+            <span>High:</span>
+            <span class="high set-color" id="high">92</span>
+          </div>
+
+          <div class="temp-low set-color">
+            <i class="fas fa-temperature-low fa-2x"></i>
+            <span>Low:</span>
+            <span class="low set-color" id="low">92</span>
+          </div>
+        </div>
+
+        <!-- sunsire/set -->
+        <div class="weather-sun">
+          <div class="sunrise set-color">
+            <i class="fas fa-sun fa-2x"></i>
+            <span>Sunrise:</span>
+            <span class="sunrise" id="sunrise">07:00</span>
+          </div>
+
+          <div class="sunset set-color">
+            <i class="fas fa-moon fa-2x"></i>
+            <span>Sunset:</span>
+            <span class="sunset" id="sunset">07:00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- js -->
+    <script src="./js/underscore.string.min.js"></script>
+    <script src="./js/moment.min.js"></script>
+    <script src="./js/date.js"></script>
+    <script src="./js/weather.js"></script>
+  </body>
+</html>
